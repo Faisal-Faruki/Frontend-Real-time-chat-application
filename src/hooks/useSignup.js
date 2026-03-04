@@ -6,12 +6,12 @@ const useSignup = () => {
 
     const queryClient = useQueryClient();
     
-  const {mutate ,ispending , error} = useMutation({
+  const {mutate ,isPending , error} = useMutation({
       mutationFn: signup,
           onSuccess: () =>  queryClient.invalidateQueries({queryKey:["authUser"]}),
-  
+
     });
-    return {error:error ,ispending , signupMutation:mutate};
+    return {error:error ,isPending , signupMutation:mutate};
 }
 
 export default useSignup

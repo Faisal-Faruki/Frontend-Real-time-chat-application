@@ -3,10 +3,16 @@ import useAuthUser from "../hooks/useAuthUser";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { completeOnboarding } from "../lib/api";
-import { LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon } from "lucide-react";
-import { LANGUAGES } from "../constants";
-// import { LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon, CameraIcon } from "lucide-react";
+// import { LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon } from "lucide-react";
+import {
+  LoaderIcon,
+  MapPinIcon,
+  ShipWheelIcon,
+  ShuffleIcon,
+  CameraIcon
+} from "lucide-react";
 
+import { LANGUAGES } from "../constants";
 
 const OnboardingPage = () => {
   const { authUser } = useAuthUser();
@@ -18,7 +24,7 @@ const OnboardingPage = () => {
     nativeLanguage: authUser?.nativeLanguage || "",
     learningLanguage: authUser?.learningLanguage || "",
     location: authUser?.location || "",
-    profilePic: authUser?.profilePic || "",
+    profilePicture: authUser?.profilePicture || "",
   });
 
   const { mutate: onboardingMutation, isPending } = useMutation({
@@ -43,7 +49,7 @@ const OnboardingPage = () => {
     const idx = Math.floor(Math.random() * 100) + 1; // 1-100 included
     const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
 
-    setFormState({ ...formState, profilePic: randomAvatar });
+    setFormState({ ...formState, profilePicture: randomAvatar });
     toast.success("Random profile picture generated!");
   };
 
@@ -58,9 +64,9 @@ const OnboardingPage = () => {
             <div className="flex flex-col items-center justify-center space-y-4">
               {/* IMAGE PREVIEW */}
               <div className="size-32 rounded-full bg-base-300 overflow-hidden">
-                {formState.profilePic ? (
+                {formState.profilePicture ? (
                   <img
-                    src={formState.profilePic}
+                    src={formState.profilePicture}
                     alt="Profile Preview"
                     className="w-full h-full object-cover"
                   />

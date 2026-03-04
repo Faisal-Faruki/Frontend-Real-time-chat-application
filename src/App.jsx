@@ -3,8 +3,7 @@ import HomePages from './pages/HomePages';
 import PageLoader from './components/PageLoader';
 import SignupPages from './pages/SignupPages';
 import LoginPages from './pages/LoginPages';
-// import NotificationPage from './pages/NotificationPage';
-import NotificationsPage from './pages/NotificationPage';
+import NotificationPage from './pages/NotificationPage';
 import CallPages from './pages/CallPages';
 import ChatPages from './pages/ChatPages';
 import OnboardingPage from './pages/OnboardingPage';
@@ -70,7 +69,7 @@ const {theme} = useThemeStore();
           element={
             isAuthenticated && isOnboarded ? (
               <Layout showSidebar={true}>
-              <NotificationPages />
+              <NotificationPage />
               </Layout>
             ) : (
               <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />

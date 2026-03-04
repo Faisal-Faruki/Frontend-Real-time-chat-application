@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { useState } from 'react';
 import { ShipWheelIcon } from 'lucide-react';
@@ -9,9 +10,9 @@ import { signup } from '../lib/api';
 
 const SignupPages = () => {
   const [signupData, setSignupData] = React.useState({
-    FullName: "",
-    Email: "",
-    Password: "",
+    fullName: "",
+    email: "",
+    password: "",
   });
 
   const queryClient = useQueryClient();
@@ -62,41 +63,41 @@ const SignupPages = () => {
                 </div>
                     {/* FullName */}
                 <div className="space-y-3">
-                  <div className="from-control w-full">
+                  <div className="form-control w-full">
                     <label className="label">
                      <span className="label-text">Full Name</span>
                     </label>
                     <input type="text" 
                     placeholder="Enter your FullName"
                     className="input input-bordered w-full"
-                    value={signupData.FullName}
-                    onChange={(e) => setSignupData({...signupData, FullName: e.target.value})}
+                    value={signupData.fullName}
+                    onChange={(e) => setSignupData({...signupData, fullName: e.target.value})}
                     required
                     />
                   </div>
                   {/* Email */}
-                  <div className="from-control w-full">
+                  <div className="form-control w-full">
                     <label className="label">
                      <span className="label-text">Email</span>
                     </label>
                     <input type="email" 
                     placeholder="Enter your Email"
                     className="input input-bordered w-full"
-                    value={signupData.Email}
-                    onChange={(e) => setSignupData({...signupData, Email: e.target.value})}
+                    value={signupData.email}
+                    onChange={(e) => setSignupData({...signupData, email: e.target.value})}
                     required
                     />
                   </div>
                   {/* Password */}
-                  <div className="from-control w-full">
+                  <div className="form-control w-full">
                     <label className="label">
                      <span className="label-text">Password</span>
                     </label>
                     <input type="password" 
                     placeholder="Enter your Password"
                     className="input input-bordered w-full"
-                    value={signupData.Password}
-                    onChange={(e) => setSignupData({...signupData, Password: e.target.value})}
+                    value={signupData.password}
+                    onChange={(e) => setSignupData({...signupData, password: e.target.value})}
                     required
                     />
                      <p className="text-xs opacity-70 mt-1">

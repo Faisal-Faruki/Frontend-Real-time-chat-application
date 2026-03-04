@@ -9,8 +9,8 @@ import useLogin from '../hooks/useLogin';
 const LoginPages = () => {
 
   const[loginData , setLoginData]=useState({
-    Email:"",
-    Password:""
+    email:"",
+    password:""
   });
 
   //This is how we did it first without using our  custom hook
@@ -73,8 +73,8 @@ const handleLogin = (e) => {
                       type="email"
                       placeholder="hello@example.com"
                       className="input input-bordered w-full"
-                      value={loginData.Email}
-                      onChange={(e) => setLoginData({ ...loginData, Email: e.target.value })}
+                      value={loginData.email}
+                      onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
                       required
                     />
                   </div>
@@ -87,8 +87,8 @@ const handleLogin = (e) => {
                       type="password"
                       placeholder="••••••••"
                       className="input input-bordered w-full"
-                      value={loginData.Password}
-                      onChange={(e) => setLoginData({ ...loginData, Password: e.target.value })}
+                      value={loginData.password}
+                      onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
                       required
                     />
                   </div>
