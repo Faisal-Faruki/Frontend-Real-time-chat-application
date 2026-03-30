@@ -11,7 +11,7 @@ import { signup } from '../lib/api';
 const SignupPages = () => {
   const [signupData, setSignupData] = React.useState({
     fullName: "",
-    email: "",
+    Email: "",
     password: "",
   });
 
@@ -80,11 +80,11 @@ const SignupPages = () => {
                     <label className="label">
                      <span className="label-text">Email</span>
                     </label>
-                    <input type="email" 
+                    <input type="Email" 
                     placeholder="Enter your Email"
                     className="input input-bordered w-full"
-                    value={signupData.email}
-                    onChange={(e) => setSignupData({...signupData, email: e.target.value})}
+                    value={signupData.Email}
+                    onChange={(e) => setSignupData({...signupData, Email: e.target.value})}
                     required
                     />
                   </div>
